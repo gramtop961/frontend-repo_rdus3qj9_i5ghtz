@@ -65,11 +65,14 @@ export default function Features() {
   const marqueeItems = ['Slack', 'Google Workspace', 'Zoom', 'Notion', 'Jira', 'QuickBooks', 'HubSpot']
 
   return (
-    <section id="features" className="relative py-20 bg-gradient-to-b from-white to-slate-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="features" className="relative py-20 bg-gradient-to-b from-white to-[#DFFCF0]">
+      {/* subtle backdrop accents */}
+      <div className="pointer-events-none absolute inset-0 opacity-50 mix-blend-multiply bg-[radial-gradient(600px_200px_at_10%_20%,rgba(62,230,161,0.15),transparent),radial-gradient(600px_200px_at_90%_60%,rgba(0,207,255,0.12),transparent)]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeUp} className="max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Everything your company needs</h2>
-          <p className="mt-3 text-gray-600">One login, 24+ modules. Replace scattered tools with one cohesive platform designed for modern operations.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B1B26]">Everything your company needs</h2>
+          <p className="mt-3 text-[#445566]">One login, 24+ modules. Replace scattered tools with one cohesive platform designed for modern operations.</p>
         </motion.div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -80,15 +83,15 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: (idx % 6) * 0.05 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="group rounded-2xl border border-[#E6F8EE] bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="flex items-start gap-4">
-                <div className="h-11 w-11 rounded-xl bg-blue-600/10 text-blue-700 grid place-items-center group-hover:bg-blue-600/15">
+                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#3EE6A1]/15 to-[#00CFFF]/15 text-[#0B1B26] grid place-items-center group-hover:from-[#3EE6A1]/20 group-hover:to-[#00CFFF]/20">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{desc}</p>
+                  <h3 className="font-semibold text-[#0B1B26]">{name}</h3>
+                  <p className="mt-1 text-sm text-[#445566]">{desc}</p>
                 </div>
               </div>
             </motion.div>
@@ -109,17 +112,17 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 text-center"
+              className="rounded-2xl border border-[#E6F8EE] bg-white p-6 text-center"
             >
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{v}</div>
-              <div className="mt-1 text-xs text-gray-600">{k}</div>
+              <div className="text-3xl font-bold bg-gradient-to-r from-[#3EE6A1] to-[#00CFFF] bg-clip-text text-transparent">{v}</div>
+              <div className="mt-1 text-xs text-[#8896A6]">{k}</div>
             </motion.div>
           ))}
         </div>
 
         {/* Use cases */}
         <div className="mt-16">
-          <motion.h3 {...fadeUp} className="text-2xl font-semibold tracking-tight text-gray-900">Built for every team</motion.h3>
+          <motion.h3 {...fadeUp} className="text-2xl font-semibold tracking-tight text-[#0B1B26]">Built for every team</motion.h3>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { title: 'Security & IT', desc: 'Enforce policies, track assets, and keep audits ready.', icon: Shield },
@@ -132,21 +135,21 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
+                className="rounded-2xl border border-[#E6F8EE] bg-white p-6"
               >
-                <div className="h-10 w-10 rounded-lg bg-indigo-600/10 text-indigo-600 grid place-items-center">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#3EE6A1]/15 to-[#00CFFF]/15 text-[#0B1B26] grid place-items-center">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h4 className="mt-4 font-semibold text-gray-900">{title}</h4>
-                <p className="mt-1 text-sm text-gray-600">{desc}</p>
+                <h4 className="mt-4 font-semibold text-[#0B1B26]">{title}</h4>
+                <p className="mt-1 text-sm text-[#445566]">{desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
         {/* Integrations marquee */}
-        <div className="mt-16 overflow-hidden rounded-xl border border-slate-200 bg-white">
-          <div className="p-4 text-xs font-medium text-gray-500">Integrations</div>
+        <div className="mt-16 overflow-hidden rounded-xl border border-[#E6F8EE] bg-white">
+          <div className="p-4 text-xs font-medium text-[#8896A6]">Integrations</div>
           <div className="relative h-14 overflow-hidden">
             <motion.div
               initial={{ x: 0 }}
@@ -155,7 +158,7 @@ export default function Features() {
               className="absolute left-0 top-1/2 -translate-y-1/2 whitespace-nowrap"
             >
               {[...marqueeItems, ...marqueeItems].map((label, i) => (
-                <span key={i} className="mx-8 text-sm text-gray-700">{label}</span>
+                <span key={i} className="mx-8 text-sm text-[#445566]">{label}</span>
               ))}
             </motion.div>
           </div>
@@ -163,7 +166,7 @@ export default function Features() {
 
         {/* Testimonials */}
         <div className="mt-16">
-          <motion.h3 {...fadeUp} className="text-2xl font-semibold tracking-tight text-gray-900">Loved by modern teams</motion.h3>
+          <motion.h3 {...fadeUp} className="text-2xl font-semibold tracking-tight text-[#0B1B26]">Loved by modern teams</motion.h3>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
@@ -188,10 +191,10 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
+                className="rounded-2xl border border-[#E6F8EE] bg-white p-6"
               >
-                <p className="text-gray-800">“{quote}”</p>
-                <footer className="mt-3 text-sm text-gray-600">{author} • {role}</footer>
+                <p className="text-[#0B1B26]">“{quote}”</p>
+                <footer className="mt-3 text-sm text-[#445566]">{author} • {role}</footer>
               </motion.blockquote>
             ))}
           </div>
